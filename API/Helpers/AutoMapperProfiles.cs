@@ -12,12 +12,11 @@ namespace API.Helpers
         {
             // ForMember se encarga de darle el URL de la foto principal al usuario que sea la main
             CreateMap<AppUser, MemberDto>()
-            .ForMember(dest => dest.PhotoUrl, opts => opts.MapFrom(src => 
-            src.Photos.FirstOrDefault(x => x.IsMain).Url))
-            .ForMember(dest => dest.Age, opts => opts.MapFrom(src =>
-            src.DateOfBirth.CalculateAge()));
+                .ForMember(dest => dest.PhotoUrl, opts => opts.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url))
+                .ForMember(dest => dest.Age, opts => opts.MapFrom(src =>src.DateOfBirth.CalculateAge()));
 
             CreateMap<Photo, PhotoDto>();
+            CreateMap<MemberUpdateDto, AppUser>();
         }
     }
 }
