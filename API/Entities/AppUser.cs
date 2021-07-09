@@ -8,7 +8,6 @@ namespace API.Entities
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -24,5 +23,7 @@ namespace API.Entities
         public ICollection<Photo> Photos { get; set; }
         public ICollection<UserLike> LikedByUsers { get; set; }
         public ICollection<UserLike> LikedUsers { get; set; }
+        public ICollection<Message> MessageSent { get; set; }
+        public ICollection<Message> MessageReceived { get; set; }
     }
 }
